@@ -1,0 +1,8 @@
+<beans>
+    <bean id="accountController" class="com.pb.demo.controller.AccountController">
+        <property name="accountService" ref="accountService"></property>
+    </bean>
+    <bean id="accountService" class="com.pb.demo.service.impl.AccountServiceImpl" />
+    <bean id="transactionManage" class="com.pb.framework.proxy.TransactionManage" />
+    <before package="com.pb.demo.service.impl" ref="transactionManage" method="before" />
+</beans>
